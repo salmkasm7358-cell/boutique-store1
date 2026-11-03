@@ -1,0 +1,84 @@
+{
+  "store_info": {
+    "name": "بوتيك السعادة",
+    "slogan": "كل ما يثير السعادة بين يديك",
+    "email": "support@brandland.com",
+    "phone": "+967 770 123 456",
+    "whatsapp": "+967 770 123 456",
+    "currency": "ر.س",
+    "logo": "B"
+  },
+  "stats": {
+    "total_orders": 0,
+    "total_sales": 0,
+    "total_products": 0,
+    "total_customers": 0,
+    "note": "المتجر جديد - لم يتم أي طلب بعد"
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "قضبان صناعية",
+      "icon": "🎁",
+      "products_count": 0
+    },
+    {
+      "id": 2,
+      "name": "السدادات",
+      "icon": "✨",
+      "products_count": 0
+    },
+    {
+      "id": 3,
+      "name": "الحلقات والتأخير",
+      "icon": "💍",
+      "products_count": 0
+    },
+    {
+      "id": 4,
+      "name": "الزيوت والجل",
+      "icon": "🧴",
+      "products_count": 0
+    },
+    {
+      "id": 5,
+      "name": "ألعاب متنوعة",
+      "icon": "🎀",
+      "products_count": 0
+    },
+    {
+      "id": 6,
+      "name": "الملابس المثيرة",
+      "icon": "👙",
+      "products_count": 0
+    },
+    {
+      "id": 7,
+      "name": "المنتجات الأكثر مبيعا",
+      "icon": "🔥",
+      "products_count": 0
+    },
+    {
+      "id": 8,
+      "name": "منتجات جديدة",
+      "icon": "⭐",
+      "products_count": 0
+    }
+  ],
+  "products": [],
+  "orders": [],
+  "customers": [],
+  "coupons": [
+    {
+      "code": "SALE50",
+      "discount": 50,
+      "type": "fixed"
+    }
+  ],
+  "settings": {
+    "shipping_free": true,
+    "shipping_cost": 0,
+    "tax": 0,
+    "is_new_store": true
+  }
+}
