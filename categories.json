@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cat1",
+    "name": "العطور",
+    "name_en": "Perfumes",
+    "image": "https://images.unsplash.com/photo-1541643600914-78b084683601?w=200",
+    "icon": "🌸",
+    "count": 0
+  },
+  {
+    "id": "cat2",
+    "name": "الشموع",
+    "name_en": "Candles",
+    "image": "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=200",
+    "icon": "🕯️",
+    "count": 0
+  },
+  {
+    "id": "cat3",
+    "name": "الهدايا",
+    "name_en": "Gifts",
+    "image": "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=200",
+    "icon": "🎁",
+    "count": 0
+  },
+  {
+    "id": "cat4",
+    "name": "الدونات",
+    "name_en": "Donuts",
+    "image": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=200",
+    "icon": "🍩",
+    "count": 0
+  },
+  {
+    "id": "cat5",
+    "name": "البوكسات",
+    "name_en": "Boxes",
+    "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=200",
+    "icon": "📦",
+    "count": 0
+  },
+  {
+    "id": "cat6",
+    "name": "الزهور",
+    "name_en": "Flowers",
+    "image": "https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=200",
+    "icon": "🌹",
+    "count": 0
+  },
+  {
+    "id": "cat7",
+    "name": "الحلويات",
+    "name_en": "Sweets",
+    "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200",
+    "icon": "🍰",
+    "count": 0
+  },
+  {
+    "id": "cat8",
+    "name": "الإكسسوارات",
+    "name_en": "Accessories",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200",
+    "icon": "💎",
+    "count": 0
+  }
+]
