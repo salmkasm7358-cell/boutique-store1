@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حسابنا - الأسئلة الشائعة - بوتيك السعادة - #000000 #d4af37 #ff0e7a</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--black:#000000;--gold:#d4af37;--gold-light:#c9a86a;--pink:#ff0e7a;--pink-light:#ff4da6}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+body{background:var(--black);color:#fff;direction:rtl;padding-bottom:70px}
+.header{position:sticky;top:0;z-index:100;background:var(--black);border-bottom:2px solid var(--gold);display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
+.header .cart{position:relative;color:var(--gold);font-size:22px}
+.header .cart .badge{position:absolute;top:-8px;right:-8px;background:var(--pink);color:#fff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800}
+.header .logo{font-weight:800;background:linear-gradient(45deg,var(--gold),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:16px;text-align:center;line-height:1.2}
+.header .logo b{font-size:20px;display:block}
+.header .icons{display:flex;gap:16px;color:var(--gold);font-size:20px}
+.faq-banner{position:relative;height:165px;background:linear-gradient(90deg,#000 0%, #1a0a15 30%, #2a0a20 50%, #1a0a15 70%, #000 100%);display:flex;align-items:center;justify-content:space-between;padding:0 14px;overflow:hidden;border-bottom:1.5px solid #c9a86a44;border-top:1.5px solid #c9a86a44}
+.faq-gift{width:88px;height:88px;background:linear-gradient(145deg,#1a1a1a,#0a0a0a);border:1.5px solid var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 20px #ff0e7a22;min-width:88px}
+.faq-gift::before{content:'🎁';font-size:42px}
+.faq-gift-b{position:absolute;bottom:-6px;right:-6px;width:32px;height:32px;background:#000;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-weight:900;font-size:16px}
+.faq-center{text-align:center;flex:1;padding:0 8px}
+.faq-center h1{font-size:21px;font-weight:900;background:linear-gradient(45deg,var(--gold),#ffd700,var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.faq-center p{color:#ccc;font-size:10.5px;margin-top:3px;line-height:1.4}
+.faq-right{width:78px;min-width:78px;height:78px;position:relative}
+.faq-q{width:54px;height:54px;border:1.5px solid var(--gold);border-radius:50% 50% 50% 0;background:#0a0a0a;display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--gold);position:absolute;top:0;right:0;box-shadow:0 0 12px #d4af3744}
+.faq-list{width:46px;height:26px;border:1.5px solid var(--gold);border-radius:20px;background:#0a0a0a;display:flex;align-items:center;justify-content:center;position:absolute;bottom:8px;right:8px}
+.faq-list-lines{width:18px;height:2px;background:var(--gold);box-shadow:0 5px 0 var(--gold), 0 -5px 0 var(--gold);border-radius:2px}
+.faq-search{padding:12px;background:#000}
+.faq-search-box{position:relative}
+.faq-search-box input{width:100%;background:#0a0a0a;border:1.5px solid var(--gold-light);border-radius:25px;padding:11px 44px 11px 16px;color:#fff;outline:none;font-size:13px}
+.faq-search-box i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:15px}
+.faq-items{padding:0 10px 10px;display:flex;flex-direction:column;gap:9px;background:#000}
+.faq-item{background:linear-gradient(145deg,#0a0a0a,#111);border:1.5px solid var(--gold-light);border-radius:12px;padding:11px 12px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:.3s}
+.faq-item:hover{border-color:var(--gold);transform:translateX(-3px);box-shadow:0 0 15px #d4af3722}
+.faq-icon{width:44px;height:44px;min-width:44px;border:1.5px solid var(--gold-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--pink);background:#000}
+.faq-content{flex:1}
+.faq-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px}
+.faq-sub{font-size:10.5px;color:#888;line-height:1.3}
+.faq-arrow{color:var(--gold);font-size:13px}
+.faq-contact{margin:12px 10px;background:linear-gradient(145deg,#0a0a0a,#111);border:1.5px solid var(--gold-light);border-radius:12px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.faq-contact-left{display:flex;align-items:center;gap:10px}
+.faq-contact-icon{width:44px;height:44px;border:1.5px solid var(--gold-light);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:18px;background:#000}
+.faq-contact-text h4{font-size:12.5px;font-weight:700;color:#fff}
+.faq-contact-text p{font-size:10px;color:#888;margin-top:2px}
+.faq-whatsapp{background:linear-gradient(45deg,var(--pink),var(--pink-light));color:#fff;border:none;border-radius:20px;padding:9px 18px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px;cursor:pointer;box-shadow:0 2px 12px #ff0e7a44}
+.faq-trust{margin:14px 10px 10px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:12px 0;border-top:1px solid #222;border-bottom:1px solid #222}
+.faq-trust-item{text-align:center;position:relative}
+.faq-trust-item:not(:last-child)::after{content:'';position:absolute;left:-5px;top:10%;height:80%;width:1px;background:linear-gradient(180deg,transparent,#ff0e7a44,transparent)}
+.faq-trust-icon{width:38px;height:38px;border:1.5px solid #ff0e7a66;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;color:var(--pink);font-size:16px;background:#0a0a0a}
+.faq-trust-title{font-size:11px;font-weight:700;color:var(--gold-light);margin-bottom:2px}
+.faq-trust-sub{font-size:9px;color:#666}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0a0a0a;border-top:2.5px solid var(--gold);display:flex;justify-content:space-around;padding:7px 0 6px;z-index:90}
+.bottom-nav a{display:flex;flex-direction:column;align-items:center;color:#666;text-decoration:none;font-size:10px;gap:3px;padding:5px 14px}
+.bottom-nav a.active{color:var(--pink)}
+.bottom-nav a i{font-size:19px}
+.modal{position:fixed;inset:0;background:#000000dd;z-index:300;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.modal-content{background:#141414;border:1.5px solid var(--gold-light);border-radius:18px;padding:22px;width:100%;max-width:420px;max-height:90vh;overflow-y:auto}
+.btn{border-radius:22px;padding:8px 11px;font-size:11.5px;font-weight:700;cursor:pointer;text-align:center;border:none}
+.btn-gold{background:transparent;border:1.5px solid var(--gold);color:var(--gold);width:100%;padding:10px;margin-top:10px}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="cart"><i class="fas fa-shopping-cart"></i><div class="badge">0</div></div>
+<div class="logo"><b>B</b>بوتيك السعاده</div>
+<div class="icons"><i class="fas fa-search"></i><i class="fas fa-bars"></i></div>
+</div>
+
+<div class="faq-banner">
+<div class="faq-gift"><div class="faq-gift-b">B</div></div>
+<div class="faq-center"><h1>الأسئلة الشائعة</h1><p>تجيب على أهم الاستفسارات بكل وضوح<br>لراحتكم وتسهيل تجربتكم معنا</p></div>
+<div class="faq-right"><div class="faq-q">?</div><div class="faq-list"><div class="faq-list-lines"></div></div></div>
+</div>
+
+<div class="faq-search">
+<div class="faq-search-box"><input type="text" id="faqSearch" placeholder="ابحث عن سؤال ..." oninput="searchFAQ(this.value)"><i class="fas fa-search"></i></div>
+</div>
+
+<div class="faq-items" id="faqItems">
+<div class="faq-item" onclick="openFAQ(0)"><div class="faq-icon"><i class="fas fa-shopping-cart"></i></div><div class="faq-content"><div class="faq-title">الطلبات والشحن</div><div class="faq-sub">معلومات عن الطلبات، الشحن، والتوصيل</div></div><div class="faq-arrow"><i class="fas fa-chevron-left"></i></div></div>
+<div class="faq-item" onclick="openFAQ(1)"><div class="faq-icon"><i class="fas fa-credit-card"></i></div><div class="faq-content"><div class="faq-title">طرق الدفع</div><div class="faq-sub">خيارات الدفع المتوفرة وكيفية السداد</div></div><div class="faq-arrow"><i class="fas fa-chevron-left"></i></div></div>
+<div class="faq-item" onclick="openFAQ(2)"><div class="faq-icon"><i class="fas fa-cube"></i></div><div class="faq-content"><div class="faq-title">المنتجات</div><div class="faq-sub">تفاصيل المنتجات، الاستخدام، والضمان</div></div><div class="faq-arrow"><i class="fas fa-chevron-left"></i></div></div>
+<div class="faq-item" onclick="openFAQ(3)"><div class="faq-icon"><i class="fas fa-user"></i></div><div class="faq-content"><div class="faq-title">الحساب الشخصي</div><div class="faq-sub">إدارة الحساب وتحديث البيانات</div></div><div class="faq-arrow"><i class="fas fa-chevron-left"></i></div></div>
+<div class="faq-item" onclick="openFAQ(4)"><div class="faq-icon"><i class="fas fa-undo"></i></div><div class="faq-content"><div class="faq-title">الإرجاع والاستبدال</div><div class="faq-sub">شروط وخطوات الإرجاع أو الاستبدال</div></div><div class="faq-arrow"><i class="fas fa-chevron-left"></i></div></div>
+<div class="faq-item" onclick="openFAQ(5)"><div class="faq-icon"><i class="fas fa-shield-alt"></i></div><div class="faq-content"><div class="faq-title">الخصوصية والأمان</div><div class="faq-sub">سياسة الخصوصية وحماية بياناتك</div></div><div class="faq-arrow"><i class="fas fa-chevron-left"></i></div></div>
+<div class="faq-item" onclick="openFAQ(6)"><div class="faq-icon"><i class="fas fa-gift"></i></div><div class="faq-content"><div class="faq-title">العروض والخصومات</div><div class="faq-sub">كل ما يخص العروض والكوبونات</div></div><div class="faq-arrow"><i class="fas fa-chevron-left"></i></div></div>
+<div class="faq-item" onclick="openFAQ(7)"><div class="faq-icon"><i class="fas fa-headset"></i></div><div class="faq-content"><div class="faq-title">الدعم الفني</div><div class="faq-sub">التواصل مع فريق الدعم وحل المشكلات</div></div><div class="faq-arrow"><i class="fas fa-chevron-left"></i></div></div>
+</div>
+
+<div class="faq-contact">
+<div class="faq-contact-left"><div class="faq-contact-icon"><i class="fas fa-headset"></i></div><div class="faq-contact-text"><h4>لم تجد إجابة لسؤالك؟</h4><p>تواصل معنا مباشرة وسنكون سعداء بمساعدتك</p></div></div>
+<button class="faq-whatsapp" onclick="window.open('https://wa.me/966500000000','_blank')"><i class="fab fa-whatsapp"></i> تواصل معنا</button>
+</div>
+
+<div class="faq-trust">
+<div class="faq-trust-item"><div class="faq-trust-icon"><i class="fas fa-shield-alt"></i></div><div class="faq-trust-title">تسوق بأمان</div><div class="faq-trust-sub">جميع معاملاتك محمية</div></div>
+<div class="faq-trust-item"><div class="faq-trust-icon"><i class="fas fa-lock"></i></div><div class="faq-trust-title">خصوصيتك تهمنا</div><div class="faq-trust-sub">معلوماتك في أمان</div></div>
+<div class="faq-trust-item"><div class="faq-trust-icon"><i class="fas fa-headset"></i></div><div class="faq-trust-title">دعم على مدار الساعة</div><div class="faq-trust-sub">نحن هنا لمساعدتك</div></div>
+</div>
+
+<div class="modal" id="faqModal"><div class="modal-content"><h3 style="color:#d4af37;margin-bottom:12px" id="faqTitle">تفاصيل</h3><div id="faqContent" style="font-size:13px;line-height:1.7;color:#ccc"></div><button class="btn btn-gold" onclick="document.getElementById('faqModal').classList.remove('open')">إغلاق</button></div></div>
+
+<nav class="bottom-nav">
+<a href="index.html"><i class="fas fa-home"></i><span>الرئيسية</span></a>
+<a href="index.html"><i class="fas fa-th"></i><span>الأقسام</span></a>
+<a href="index.html"><i class="fas fa-shopping-bag"></i><span>جميع المنتجات</span></a>
+<a><i class="fas fa-heart"></i><span>المفضلة</span></a>
+<a class="active"><i class="fas fa-user"></i><span>حسابي</span></a>
+</nav>
+
+<script>
+const FAQ=[
+{title:'الطلبات والشحن',content:'<b>مدة التوصيل:</b> 1-3 أيام داخل المدينة، 3-5 أيام خارجها.<br><b>الشحن مجاني</b> فوق 199 ر.س، 15 ر.س أقل من ذلك.<br>يوصلك رابط تتبع عبر الواتساب بعد الشحن.'},
+{title:'طرق الدفع',content:'<b>الدفع عند الاستلام</b> متاح.<br><b>بطاقات:</b> مدى، فيزا، ماستركارد.<br><b>تحويل بنكي:</b> الراجحي، الأهلي.'},
+{title:'المنتجات',content:'<b>أصلية 100%.</b><br><b>الضمان:</b> 14 يوم استبدال.<br>صور حقيقية ووصف كامل لكل منتج.'},
+{title:'الحساب الشخصي',content:'<b>إنشاء حساب</b> برقم الجوال فقط.<br>تقدر تعدل بياناتك من حسابي > تعديل.'},
+{title:'الإرجاع والاستبدال',content:'<b>المدة:</b> 7 أيام من الاستلام.<br><b>الشرط:</b> المنتج بحالته الأصلية.<br>تواصل واتساب > إرسال صور > استلام المندوب.'},
+{title:'الخصوصية والأمان',content:'<b>بياناتك محمية بتشفير SSL.</b><br>ما نشارك بياناتك مع أي جهة.<br>الدفع آمن 100%.'},
+{title:'العروض والخصومات',content:'<b>كوبونات</b> يومية على الانستقرام.<br><b>نقاط:</b> كل 1 ر.س = نقطة، 100 نقطة = 10 ر.س خصم.'},
+{title:'الدعم الفني',content:'<b>واتساب:</b> رد خلال دقائق 9ص-12ص.<br><b>الايميل:</b> support@boutique-sa.com'}
+];
+function openFAQ(i){document.getElementById('faqTitle').textContent=FAQ[i].title;document.getElementById('faqContent').innerHTML=FAQ[i].content;document.getElementById('faqModal').classList.add('open');}
+function searchFAQ(q){const items=document.querySelectorAll('.faq-item');FAQ.forEach((d,idx)=>{const show=d.title.includes(q)||q=='';items[idx].style.display=show?'flex':'none';});}
+</script>
+</body>
+</html>
