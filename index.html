@@ -106,47 +106,27 @@ footer{text-align:center;color:#9c8b6c;font-size:12px;padding:20px 5px}
 <div class="toast" id="toast"></div><footer>© 2026 بوتيك السعادة — جميع الحقوق محفوظة</footer>
 
 <script>
-// ---- ربط البيانات مع لوحة التحكم ----
-const ADMIN_KEY = 'alsaada_admin_demo_v1'; // نفس المفتاح الموجود في لوحة التحكم
-let adminData = JSON.parse(localStorage.getItem(ADMIN_KEY)) || null;
-
-// إذا لم تكن هناك بيانات من لوحة التحكم، نضع بيانات افتراضية لكي لا يظهر المتجر فارغاً
-if(!adminData || !adminData.products || adminData.products.length === 0) {
-    adminData = {
-        products: [
-            {id: '1', name: 'منتج تجريبي 1', price: 100, category: 'الأكثر طلباً', image: 'https://via.placeholder.com/300x200/28141c/f7c64f?text=Product+1', desc: 'وصف المنتج التجريبي'},
-            {id: '2', name: 'منتج تجريبي 2', price: 150, category: 'العروض', image: 'https://via.placeholder.com/300x200/28141c/f7c64f?text=Product+2', desc: 'وصف المنتج التجريبي'}
-        ],
-        categories: [{id: '1', name: 'الأكثر طلباً', image: ''}, {id: '2', name: 'العروض', image: ''}],
-        orders: [],
-        settings: {storeName: 'بوتيك السعادة', whatsapp: '+966500000000', email: 'test@test.com'},
-        images: {}
-    };
-    localStorage.setItem(ADMIN_KEY, JSON.stringify(adminData));
-}
-
-// تحديث المتغيرات من بيانات لوحة التحكم
-const products = adminData.products;
-const categories = adminData.categories;
-const adminOrders = adminData.orders;
-
-// جلب السلة والمفضلة والطلبات الخاصة بالمتصفح
+// --- إعدادات الاتصال بالـ API ---
+const API_BASE_URL = window.location.origin; // يربط تلقائياً برابط موقعك
+let products = [];
+let categories = []; // الأقسام يمكن إضافتها لاحقاً بنفس الطريقة
 let cart = JSON.parse(localStorage.getItem('store_cart')) || [];
 let favorites = JSON.parse(localStorage.getItem('store_favs')) || [];
 let myOrders = JSON.parse(localStorage.getItem('my_orders')) || [];
 
-// تحديث اسم المتجر في الهيدر
-document.getElementById('storeNameDisplay').innerText = adminData.settings.storeName || 'بوتيك السعادة';
-
-// تحديث صورة البانر إذا كانت موجودة
-if(adminData.images && adminData.images.bannerImage) {
-    document.getElementById('heroImg').src = adminData.images.bannerImage;
-} else {
-    // صورة افتراضية في حال لم يتم رفع بانر
-    document.getElementById('heroImg').src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='400'%3E%3Crect width='1200' height='400' fill='%2328141c'/%3E%3Ctext x='50%25' y='50%25' fill='%23f7c64f' font-size='40' text-anchor='middle'%3Eبوتيك السعادة%3C/text%3E%3C/svg%3E";
+// جلب البيانات من قاعدة البيانات عند فتح الصفحة
+async function fetchProducts() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/products.js`);
+        products = await response.json();
+        renderHome();
+        renderProducts();
+        renderCategories();
+    } catch (error) {
+        console.error("خطأ في جلب المنتجات:", error);
+    }
 }
 
-// ---- دوال العرض والتحكم ----
 function go(page) {
     document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
     document.getElementById(page).classList.remove('hidden');
@@ -155,17 +135,13 @@ function go(page) {
     if(page === 'cart') renderCart();
     if(page === 'checkout') renderCheckout();
     if(page === 'orders') renderMyOrders();
-    if(page === 'home') renderHome();
-    if(page === 'products') renderProducts();
-    if(page === 'categories') renderCategories();
-    if(page === 'favorites') renderFavorites();
     window.scrollTo(0,0);
 }
 
 function addToCart(id) {
-    const prod = products.find(p => p.id === id);
+    const prod = products.find(p => p.id == id);
     if(!prod) return;
-    const existing = cart.find(c => c.id === id);
+    const existing = cart.find(c => c.id == id);
     if(existing) existing.qty++;
     else cart.push({...prod, qty: 1});
     localStorage.setItem('store_cart', JSON.stringify(cart));
@@ -178,11 +154,6 @@ function updateCartCount() {
 }
 
 function renderHome() {
-    // أقسام
-    const homeCats = document.getElementById('homeCats');
-    homeCats.innerHTML = categories.map(c => `<div class="cat" onclick="filterByCategory('${c.name}')"><img src="${c.image || 'https://via.placeholder.com/200x150/10090d/f7c64f?text='+c.name}" alt="${c.name}"><strong>${c.name}</strong></div>`).join('');
-
-    // أحدث المنتجات
     const homeProds = document.getElementById('homeProducts');
     homeProds.innerHTML = products.slice(0, 8).map(p => `
         <div class="product">
@@ -210,7 +181,9 @@ function renderProducts() {
 
 function renderCategories() {
     const allCats = document.getElementById('allCats');
-    allCats.innerHTML = categories.map(c => `<div class="cat" onclick="filterByCategory('${c.name}')"><img src="${c.image || 'https://via.placeholder.com/200x150/10090d/f7c64f?text='+c.name}" alt="${c.name}"><strong>${c.name}</strong></div>`).join('');
+    // سنعرض الأقسام الفريدة الموجودة في المنتجات
+    const uniqueCats = [...new Set(products.map(p => p.category).filter(Boolean))];
+    allCats.innerHTML = uniqueCats.map(c => `<div class="cat" onclick="filterByCategory('${c}')"><img src="https://via.placeholder.com/200x150/10090d/f7c64f?text=${c}" alt="${c}"><strong>${c}</strong></div>`).join('');
 }
 
 function filterByCategory(catName) {
@@ -276,10 +249,10 @@ function renderCart() {
 }
 
 function changeQty(id, delta) {
-    const item = cart.find(c => c.id === id);
+    const item = cart.find(c => c.id == id);
     if(item) {
         item.qty += delta;
-        if(item.qty <= 0) cart = cart.filter(c => c.id !== id);
+        if(item.qty <= 0) cart = cart.filter(c => c.id != id);
         localStorage.setItem('store_cart', JSON.stringify(cart));
         renderCart();
         updateCartCount();
@@ -287,7 +260,7 @@ function changeQty(id, delta) {
 }
 
 function removeFromCart(id) {
-    cart = cart.filter(c => c.id !== id);
+    cart = cart.filter(c => c.id != id);
     localStorage.setItem('store_cart', JSON.stringify(cart));
     renderCart();
     updateCartCount();
@@ -298,7 +271,7 @@ function renderCheckout() {
     document.getElementById('checkoutTotal').innerHTML = `<div class="sumline total"><span>الإجمالي المطلوب</span><span>${total} ر.س</span></div>`;
 }
 
-document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+document.getElementById('checkoutForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const formData = new FormData(this);
     const name = formData.get('name');
@@ -307,23 +280,40 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
     const address = formData.get('address');
     const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
 
-    // 1. حفظ الطلب للعميل (ليتابعه في صفحة طلباتي)
     const orderId = Date.now().toString();
-    const newOrder = { id: orderId, customer: name, phone: phone, total: total, status: 'جديد', date: new Date().toLocaleString('ar-EG'), items: [...cart] };
-    myOrders.push(newOrder);
-    localStorage.setItem('my_orders', JSON.stringify(myOrders));
+    const orderData = {
+        id: orderId,
+        customer_name: name,
+        phone: phone,
+        city: city,
+        address: address,
+        total: total,
+        items: cart
+    };
 
-    // 2. إرسال الطلب إلى لوحة التحكم (لكي يراه المدير)
-    if(!adminData.orders) adminData.orders = [];
-    adminData.orders.push(newOrder);
-    localStorage.setItem(ADMIN_KEY, JSON.stringify(adminData));
+    try {
+        // إرسال الطلب إلى قاعدة البيانات
+        const response = await fetch(`${API_BASE_URL}/orders.js`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderData)
+        });
 
-    // 3. تفريغ السلة والانتقال لصفحة الطلبات
-    cart = [];
-    localStorage.setItem('store_cart', JSON.stringify(cart));
-    updateCartCount();
-    alert('تم استلام طلبك بنجاح! سنتواصل معك قريباً.');
-    go('orders');
+        if(response.ok) {
+            myOrders.push(orderData);
+            localStorage.setItem('my_orders', JSON.stringify(myOrders));
+            cart = [];
+            localStorage.setItem('store_cart', JSON.stringify(cart));
+            updateCartCount();
+            alert('تم استلام طلبك بنجاح! سنتواصل معك قريباً.');
+            go('orders');
+        } else {
+            alert('حدث خطأ أثناء إرسال الطلب. حاول مرة أخرى.');
+        }
+    } catch (error) {
+        console.error("خطأ:", error);
+        alert('تعذر الاتصال بالخادم.');
+    }
 });
 
 function renderMyOrders() {
@@ -335,8 +325,7 @@ function renderMyOrders() {
     list.innerHTML = myOrders.reverse().map(o => `
         <div class="summary" style="margin-bottom:10px">
             <div class="sumline"><span>رقم الطلب</span><b>#${o.id.slice(-6)}</b></div>
-            <div class="sumline"><span>التاريخ</span><span>${o.date}</span></div>
-            <div class="sumline"><span>الحالة</span><b class="gold">${o.status}</b></div>
+            <div class="sumline"><span>الحالة</span><b class="gold">جديد</b></div>
             <div class="sumline"><span>الإجمالي</span><b class="gold">${o.total} ر.س</b></div>
         </div>
     `).join('');
@@ -358,7 +347,7 @@ function closeDrawer() { document.getElementById('drawer').classList.remove('ope
 
 // التشغيل الأولي
 updateCartCount();
-renderHome();
+fetchProducts(); // جلب المنتجات من السيرفر
 </script>
 </body>
 </html>
