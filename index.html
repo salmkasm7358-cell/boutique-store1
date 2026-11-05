@@ -1,44 +1,364 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الرئيسية - بوتيك السعادة</title><style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Tajawal','Cairo',sans-serif}
-body{background:#000;color:#fff;direction:rtl;min-height:100vh;padding-bottom:90px}
-.header{position:sticky;top:0;z-index:100;background:#000;border-bottom:1px solid #d4af37;padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
-.logo-circle{width:48px;height:48px;border:2px solid #d4af37;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#d4af37;font-weight:bold;font-size:22px;background:#111}
-.logo-text{color:#d4af37;font-size:13px;margin-top:4px}
-.icon-btn{color:#d4af37;font-size:22px;cursor:pointer;position:relative}
-.cart-badge{position:absolute;top:-8px;right:-8px;background:#ff0e7a;color:#fff;font-size:11px;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.banner{background:linear-gradient(135deg,#000 0%,#1a0a14 50%,#000 100%);border:1px solid #d4af37;border-radius:16px;margin:12px;padding:20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 15px rgba(212,175,55,0.2)}
-.gift-box{width:110px;height:85px;background:linear-gradient(145deg,#1a1a1a,#000);border:1px solid #d4af37;border-radius:8px;display:flex;align-items:center;justify-content:center;position:relative}
-.gift-box:after{content:'B';width:36px;height:36px;border:2px solid #d4af37;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#d4af37;font-weight:bold;background:#000;position:absolute;font-size:14px}
-.banner-title{font-size:26px;font-weight:900;background:linear-gradient(90deg,#d4af37,#ff0e7a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.banner-sub{font-size:12px;color:#ccc;margin-top:6px}
-.card{background:linear-gradient(145deg,#0f0f0f,#050505);border:1px solid #d4af37;border-radius:16px;padding:14px;margin:10px 12px;box-shadow:0 0 10px rgba(212,175,55,0.15)}
-.btn-pink{background:linear-gradient(90deg,#ff0e7a,#ff2e8a);color:#fff;border:none;border-radius:24px;padding:12px 20px;font-weight:bold;cursor:pointer;width:100%}
-.btn-gold{background:transparent;border:1px solid #d4af37;color:#d4af37;border-radius:24px;padding:12px 20px;font-weight:bold;cursor:pointer;width:100%}
-.product-card{display:flex;gap:12px;align-items:center}
-.product-img{width:90px;height:90px;border-radius:12px;background:linear-gradient(135deg,#1a0a14,#000);border:1px solid #d4af37;display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0}
-.price-pink{color:#ff0e7a;font-weight:bold;font-size:18px}
-.price-old{color:#666;text-decoration:line-through;font-size:13px}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#000;border-top:1px solid #d4af37;display:flex;justify-content:space-around;padding:8px 0;z-index:200}
-.nav-item{display:flex;flex-direction:column;align-items:center;color:#999;font-size:11px;cursor:pointer;padding:6px 12px;text-decoration:none}
-.nav-item.active{color:#ff0e7a}
-input,textarea{background:#111;border:1px solid #d4af37;border-radius:12px;padding:12px;color:#fff;width:100%;outline:none}
-.timeline{display:flex;justify-content:space-between;align-items:center;margin:16px 0}
-.timeline-step{display:flex;flex-direction:column;align-items:center}
-.timeline-circle{width:44px;height:44px;border-radius:50%;border:2px solid #d4af37;background:#000;display:flex;align-items:center;justify-content:center}
-.timeline-circle.active{border-color:#ff0e7a;background:rgba(255,14,122,0.15)}
-</style></head><body>
-<div class="header"><div class="icon-btn" onclick="go('cart.html')">🛒<span class="cart-badge" style="display:none">0</span></div><div style="text-align:center;cursor:pointer" onclick="go('index.html')"><div class="logo-circle">B</div><div class="logo-text">بوتيك السعادة</div></div><div style="display:flex;gap:16px"><span class="icon-btn">🔍</span><span class="icon-btn">☰</span></div></div>
-<div class="banner"><div class="gift-box"></div><div style="text-align:left"><div class="banner-title">بوتيك السعادة</div><div class="banner-sub">تسوق فاخر - هدايا، عطور، شموع</div></div></div>
-<div class="card"><div class="product-card"><div class="product-img">🎁</div><div style="flex:1"><div style="color:#d4af37;font-weight:bold">صندوق هدايا فاخر 1</div><div style="font-size:12px;color:#999">تصميم واقعي وخامات عالية الجودة</div><div style="margin-top:6px"><span class="price-pink">399 ريال</span> <span class="price-old">599 ريال</span> <span style="background:rgba(255,14,122,0.15);border:1px solid #ff0e7a;color:#ff0e7a;font-size:11px;padding:2px 6px;border-radius:10px">33% خصم</span></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn-gold" style="flex:1" onclick="go('product.html')">عرض</button><button class="btn-pink" style="flex:1" onclick="addToCart(1,'صندوق هدايا فاخر 1',399)">اطلب الآن</button></div></div></div></div><div class="card"><div class="product-card"><div class="product-img">🌸</div><div style="flex:1"><div style="color:#d4af37;font-weight:bold">عطر فاخر برائحة الزهور</div><div style="font-size:12px;color:#999">تصميم واقعي وخامات عالية الجودة</div><div style="margin-top:6px"><span class="price-pink">249 ريال</span> <span class="price-old">399 ريال</span> <span style="background:rgba(255,14,122,0.15);border:1px solid #ff0e7a;color:#ff0e7a;font-size:11px;padding:2px 6px;border-radius:10px">38% خصم</span></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn-gold" style="flex:1" onclick="go('product.html')">عرض</button><button class="btn-pink" style="flex:1" onclick="addToCart(2,'عطر فاخر برائحة الزهور',249)">اطلب الآن</button></div></div></div></div><div class="card"><div class="product-card"><div class="product-img">🕯️</div><div style="flex:1"><div style="color:#d4af37;font-weight:bold">شموع عطرية فاخرة</div><div style="font-size:12px;color:#999">تصميم واقعي وخامات عالية الجودة</div><div style="margin-top:6px"><span class="price-pink">99 ريال</span> <span class="price-old">149 ريال</span> <span style="background:rgba(255,14,122,0.15);border:1px solid #ff0e7a;color:#ff0e7a;font-size:11px;padding:2px 6px;border-radius:10px">34% خصم</span></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn-gold" style="flex:1" onclick="go('product.html')">عرض</button><button class="btn-pink" style="flex:1" onclick="addToCart(3,'شموع عطرية فاخرة',99)">اطلب الآن</button></div></div></div></div><div class="card"><div class="product-card"><div class="product-img">💐</div><div style="flex:1"><div style="color:#d4af37;font-weight:bold">باقة ورد طبيعي</div><div style="font-size:12px;color:#999">تصميم واقعي وخامات عالية الجودة</div><div style="margin-top:6px"><span class="price-pink">199 ريال</span> <span class="price-old">299 ريال</span> <span style="background:rgba(255,14,122,0.15);border:1px solid #ff0e7a;color:#ff0e7a;font-size:11px;padding:2px 6px;border-radius:10px">33% خصم</span></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn-gold" style="flex:1" onclick="go('product.html')">عرض</button><button class="btn-pink" style="flex:1" onclick="addToCart(4,'باقة ورد طبيعي',199)">اطلب الآن</button></div></div></div></div><div class="card"><div class="product-card"><div class="product-img">🍫</div><div style="flex:1"><div style="color:#d4af37;font-weight:bold">صندوق شوكولاتة فاخر</div><div style="font-size:12px;color:#999">تصميم واقعي وخامات عالية الجودة</div><div style="margin-top:6px"><span class="price-pink">149 ريال</span> <span class="price-old">219 ريال</span> <span style="background:rgba(255,14,122,0.15);border:1px solid #ff0e7a;color:#ff0e7a;font-size:11px;padding:2px 6px;border-radius:10px">32% خصم</span></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn-gold" style="flex:1" onclick="go('product.html')">عرض</button><button class="btn-pink" style="flex:1" onclick="addToCart(5,'صندوق شوكولاتة فاخر',149)">اطلب الآن</button></div></div></div></div><div class="card"><div class="product-card"><div class="product-img">⌚</div><div style="flex:1"><div style="color:#d4af37;font-weight:bold">ساعة هدايا أنيقة</div><div style="font-size:12px;color:#999">تصميم واقعي وخامات عالية الجودة</div><div style="margin-top:6px"><span class="price-pink">299 ريال</span> <span class="price-old">459 ريال</span> <span style="background:rgba(255,14,122,0.15);border:1px solid #ff0e7a;color:#ff0e7a;font-size:11px;padding:2px 6px;border-radius:10px">35% خصم</span></div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn-gold" style="flex:1" onclick="go('product.html')">عرض</button><button class="btn-pink" style="flex:1" onclick="addToCart(6,'ساعة هدايا أنيقة',299)">اطلب الآن</button></div></div></div></div><div class="card" style="text-align:center"><button class="btn-pink" onclick="go('products.html')">تصفح جميع المنتجات</button></div>
-<div class="bottom-nav"><a class="nav-item active" href="index.html"><span style="font-size:22px">🏠</span>الرئيسية</a><a class="nav-item" href="categories.html"><span style="font-size:22px">⊞</span>الأقسام</a><a class="nav-item" href="products.html"><span style="font-size:22px">🛍️</span>جميع المنتجات</a><a class="nav-item" href="favorites.html"><span style="font-size:22px">🤍</span>المفضلة</a><a class="nav-item" href="account.html"><span style="font-size:22px">👤</span>حسابي</a></div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050303">
+<title>بوتيك السعادة | متجر مستلزمات وألعاب زوجية</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--gold:#f7c64f;--gold2:#ffdf83;--pink:#f50065;--bg:#050303;--panel:#10090d;--line:#bd8b28;--muted:#c8bdbd;--green:#77d62a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0,#24100f 0,#050303 42%,#000 100%);color:#fff;font-family:'Cairo',Tahoma,sans-serif;padding-bottom:86px}
+button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}
+.gold{color:var(--gold)}.glow{text-shadow:0 0 9px #ffbf39,0 0 20px #a56a00}
+header{height:82px;position:sticky;top:0;z-index:20;background:rgba(0,0,0,.96);border-bottom:2px solid var(--gold);box-shadow:0 3px 20px #a56a0066;display:flex;align-items:center;justify-content:space-between;padding:8px 16px}
+.brand{display:flex;align-items:center;gap:9px}.brand-mark{font-family:Georgia,serif;font-size:58px;color:var(--gold);line-height:1;text-shadow:0 0 12px #c78a19}.brand-name{font-size:clamp(17px,3vw,29px);font-weight:900;color:var(--gold);line-height:1.2}.brand small{display:block;font-size:11px;color:#f4d17b;font-weight:600}
+.head-actions{display:flex;gap:15px;align-items:center}.icon-btn{border:0;background:none;color:var(--gold);font-size:27px;position:relative;padding:5px}.count{position:absolute;top:-2px;right:-5px;background:#f20d36;color:white;border-radius:50%;font:700 11px Arial;padding:4px 7px}
+.wrap{max-width:1180px;margin:auto;padding:12px}.hero{height:clamp(205px,46vw,430px);border:2px solid var(--gold);border-radius:25px;overflow:hidden;position:relative;background:#160b0e;box-shadow:0 0 18px #f7bd3470;margin:6px 0 18px}.hero img{width:100%;height:100%;object-fit:cover;display:block}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 25%,rgba(0,0,0,.62) 100%);pointer-events:none}.hero-copy{position:absolute;z-index:1;right:5%;top:18%;width:48%;text-align:center}.hero-copy h1{color:var(--gold);font-size:clamp(25px,5vw,55px);margin:0 0 3px;font-weight:900;text-shadow:0 0 12px #a56a00}.hero-copy p{font-size:clamp(14px,2.4vw,25px);margin:0 0 15px}.gold-btn{background:linear-gradient(#ffe18a,#f5b72c 55%,#d88b12);color:#170c00;border:1px solid #ffdf7c;border-radius:50px;padding:10px 24px;font-weight:900;box-shadow:0 0 14px #d99b2866;transition:.2s}.gold-btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.pink-btn{background:linear-gradient(#ff4c99,#ed005b 60%,#a80041);color:white;border:1px solid #ff9bc5;border-radius:50px;padding:12px 24px;font-weight:900;box-shadow:0 0 14px #f5006570}
+.section-title{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--gold);font-size:25px;font-weight:900;margin:22px 0 12px}.section-title:before,.section-title:after{content:"";height:1px;background:linear-gradient(90deg,transparent,var(--gold));flex:1}.section-title:after{transform:scaleX(-1)}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cat{border:2px solid var(--gold);border-radius:18px;overflow:hidden;background:#10090d;box-shadow:0 0 10px #d69b3155;position:relative}.cat img{width:100%;height:145px;object-fit:cover;display:block}.cat strong{display:block;text-align:center;padding:8px 3px;color:#fff;font-size:15px;background:linear-gradient(transparent,#000 40%)}.cat:hover{transform:translateY(-3px);box-shadow:0 0 18px #ffca4f}
+.promo{margin:22px 0;border:2px solid var(--gold);border-radius:22px;padding:20px;text-align:center;background:radial-gradient(ellipse,#48202c,#10070a 60%,#050303);box-shadow:0 0 18px #d99b2866}.promo h2{color:var(--gold);font-size:clamp(22px,4vw,38px);margin:0}.promo p{margin:4px 0 12px;color:#ffe6b1}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.product{border:2px solid var(--gold);border-radius:19px;overflow:hidden;background:linear-gradient(#28141c,#050303 65%);box-shadow:0 0 11px #f2b83c55;position:relative}.product img{width:100%;height:180px;object-fit:cover;display:block}.product-info{padding:9px 11px 12px;text-align:center}.product h3{margin:0;font-size:16px}.rating{color:#ffc52e;letter-spacing:2px;font-size:14px}.price{color:var(--gold);font-weight:900;font-size:22px}.old{color:#888;text-decoration:line-through;font-size:14px;margin-right:8px}.tag{position:absolute;top:9px;right:9px;background:var(--pink);padding:3px 10px;border-radius:20px;font-size:12px;font-weight:800}.add{width:100%;margin-top:8px;padding:8px;font-size:14px}
+.searchbar{display:flex;gap:8px;border:2px solid var(--gold);border-radius:40px;padding:8px 15px;margin:12px 0;background:#080506;box-shadow:0 0 10px #f5bd3c55}.searchbar input{background:none;border:0;outline:0;color:#fff;flex:1;min-width:0}.searchbar span{color:var(--gold);font-size:22px}
+.chips{display:flex;gap:8px;overflow:auto;padding:5px 0 12px}.chip{white-space:nowrap;border:1px solid var(--gold);background:#090606;color:white;border-radius:24px;padding:7px 14px}.chip.active{background:linear-gradient(#ffe18a,#e9a91e);color:#170c00;font-weight:900}
+.page-banner{border:2px solid var(--gold);border-radius:20px;padding:20px 12px;text-align:center;background:radial-gradient(ellipse,#32121e,#070405);margin:8px 0 15px}.page-banner h1{margin:0;color:var(--gold);font-size:30px}.page-banner p{margin:3px 0 0}
+.cart-row{display:grid;grid-template-columns:120px 1fr auto;gap:12px;align-items:center;border:1px solid var(--gold);border-radius:18px;padding:10px;margin:10px 0;background:#0d0809}.cart-row img{width:120px;height:95px;object-fit:cover;border-radius:12px}.qty{display:flex;align-items:center;gap:12px;border:1px solid var(--gold);border-radius:30px;padding:3px 8px;width:max-content;margin-top:8px}.qty button{background:none;border:0;color:var(--gold);font-size:22px}.remove{border:0;background:none;color:#ff3658;font-size:22px}
+.summary,.form-card,.contact-card{border:1px solid var(--gold);border-radius:18px;padding:16px;background:linear-gradient(135deg,#140b0d,#050303);margin:14px 0}.sumline{display:flex;justify-content:space-between;padding:6px 0}.total{border-top:1px solid var(--gold);padding-top:10px;font-size:22px;color:var(--gold);font-weight:900}
+.field{width:100%;background:#090708;border:1px solid #c99a39;border-radius:12px;color:white;padding:12px;margin:6px 0;outline:none}.field:focus{box-shadow:0 0 10px #f6c34a66}.field::placeholder{color:#aaa}textarea.field{min-height:100px;resize:vertical}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:25;background:rgba(0,0,0,.97);border-top:2px solid var(--gold);box-shadow:0 -4px 18px #b77a1c66;display:flex;justify-content:space-around;padding:7px 3px calc(7px + env(safe-area-inset-bottom))}.nav-item{background:none;border:0;color:#fff;display:flex;flex-direction:column;align-items:center;gap:0;font-size:11px;min-width:16%;padding:2px}.nav-item .nav-icon{font-size:23px;color:var(--gold)}.nav-item.active{background:linear-gradient(#a66a12,#f4c14b);color:#100800;border-radius:12px;font-weight:900}.nav-item.active .nav-icon{color:#100800}
+.drawer{position:fixed;inset:0;background:#000b;z-index:40;display:none}.drawer.open{display:block}.drawer-panel{position:absolute;right:0;top:0;height:100%;width:min(330px,85vw);background:#080506;border-left:2px solid var(--gold);padding:20px}.drawer-panel button{display:block;width:100%;text-align:right;background:none;border:0;border-bottom:1px solid #5c431a;color:#fff;padding:14px}.close{float:left;color:var(--gold);background:none;border:0;font-size:25px}
+.toast{position:fixed;top:90px;left:50%;transform:translateX(-50%);background:#17100a;border:1px solid var(--gold);padding:10px 20px;border-radius:30px;z-index:60;display:none;box-shadow:0 0 15px #e8ac31}
+.empty{text-align:center;padding:40px 10px;color:#d9c9aa}.hidden{display:none!important}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.contact-grid .summary{text-align:center}.contact-grid b{color:var(--gold);display:block;font-size:18px}
+footer{text-align:center;color:#9c8b6c;font-size:12px;padding:20px 5px}
+@media(min-width:760px){body{padding-bottom:0}header{padding:8px max(25px,calc((100% - 1160px)/2))}.wrap{padding:18px}.bottom-nav{position:static;max-width:700px;margin:25px auto 0;border:1px solid var(--gold);border-radius:18px}.nav-item{font-size:13px}.nav-item .nav-icon{font-size:25px}.products{grid-template-columns:repeat(4,1fr)}.cat-grid{grid-template-columns:repeat(6,1fr)}.cat img{height:130px}.product img{height:190px}}
+@media(max-width:480px){header{height:74px;padding:6px 10px}.brand-mark{font-size:45px}.brand small{font-size:9px}.head-actions{gap:7px}.icon-btn{font-size:23px}.hero{height:220px;border-radius:18px}.hero-copy{right:2%;width:53%;top:16%}.hero-copy p{margin-bottom:8px}.hero-copy .gold-btn{padding:7px 15px;font-size:12px}.cat-grid{grid-template-columns:repeat(2,1fr)}.cat img{height:125px}.products{grid-template-columns:repeat(2,1fr);gap:9px}.product img{height:140px}.product h3{font-size:14px}.price{font-size:19px}.product-info{padding:7px}.add{font-size:12px;padding:7px}.cart-row{grid-template-columns:85px 1fr auto;gap:7px;padding:7px}.cart-row img{width:85px;height:80px}.cart-row h3{font-size:14px}.contact-grid{grid-template-columns:1fr}.page-banner h1{font-size:24px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="head-actions">
+  <button class="icon-btn" onclick="go('cart')" aria-label="السلة">🛒<span class="count" id="cartCount">0</span></button>
+  <button class="icon-btn" onclick="toggleSearch()" aria-label="بحث">⌕</button>
+ </div>
+ <div class="brand"><div class="brand-mark">B</div><div><div class="brand-name" id="storeNameDisplay">بوتيك السعادة</div><small>متجر مستلزمات والألعاب الزوجية</small></div></div>
+ <button class="icon-btn" onclick="openDrawer()" aria-label="القائمة">☰</button>
+</header>
+<main class="wrap">
+ <section id="home" class="view">
+  <div id="homeSearch" class="searchbar hidden"><span>⌕</span><input id="homeSearchInput" placeholder="ابحث عن منتج..." oninput="searchProducts(this.value)"></div>
+  <div class="hero"><img id="heroImg" alt="بوتيك السعادة"><div class="hero-copy"><h1>بوتيك السعادة</h1><p>للحياة الزوجية أجمل</p><button class="gold-btn" onclick="go('products')">تسوق الآن　🛒</button></div></div>
+  <div class="cat-grid" id="homeCats"></div>
+  <div class="promo"><h2>🎁 خصومات حصرية</h2><p>على أفضل المنتجات المختارة</p><button class="gold-btn" onclick="go('products')">اطلب الآن ←</button></div>
+  <h2 class="section-title">⭐ أحدث المنتجات</h2>
+  <div class="products" id="homeProducts"></div>
+ </section>
+ <section id="categories" class="view hidden">
+  <div class="page-banner"><h1>أقسام متنوعة</h1><p>تصفح الأقسام واختر ما يناسبك</p></div>
+  <div class="searchbar"><span>⌕</span><input placeholder="ابحث عن قسم..." oninput="filterCats(this.value)"></div>
+  <div class="cat-grid" id="allCats"></div>
+ </section>
+ <section id="products" class="view hidden">
+  <div class="page-banner"><h1>جميع المنتجات</h1><p>اكتشف أفضل المنتجات بجودة عالية</p></div>
+  <div class="searchbar"><span>⌕</span><input id="productSearch" placeholder="ابحث عن منتج..." oninput="searchProducts(this.value)"></div>
+  <div class="chips" id="categoryChips"></div>
+  <div class="products" id="allProducts"></div>
+ </section>
+ <section id="detail" class="view hidden"></section>
+ <section id="cart" class="view hidden">
+  <div class="page-banner"><h1>🛒 سلة المشتريات</h1><p>منتجاتك المختارة في سلة التسوق</p></div>
+  <div id="cartItems"></div><div id="cartSummary"></div>
+ </section>
+ <section id="favorites" class="view hidden">
+  <div class="page-banner"><h1>♡ المفضلة</h1><p>المنتجات التي أعجبتك</p></div><div id="favProducts" class="products"></div>
+ </section>
+ <section id="orders" class="view hidden">
+  <div class="page-banner"><h1>📦 متابعة طلباتي</h1><p>يمكنك متابعة حالة طلباتك بكل سهولة</p></div><div id="ordersList"></div>
+ </section>
+ <section id="checkout" class="view hidden">
+  <div class="page-banner"><h1>إتمام الطلب الآن</h1><p>أدخل بياناتك لإتمام عملية الشراء</p></div>
+  <form class="form-card" id="checkoutForm">
+   <h3 class="gold">معلومات الطلب</h3>
+   <input class="field" name="name" placeholder="الاسم الكامل *" required>
+   <input class="field" name="phone" placeholder="رقم الجوال *" required>
+   <select class="field" name="city" required><option value="">اختر المدينة *</option><option>الرياض</option><option>جدة</option><option>مكة المكرمة</option><option>المدينة المنورة</option><option>الدمام</option><option>أبها</option><option>مدينة أخرى</option></select>
+   <input class="field" name="address" placeholder="العنوان بالتفصيل *" required>
+   <h3 class="gold">طريقة التوصيل</h3><label><input type="radio" name="shipping" value="الشحن السريع" checked> الشحن السريع لجميع المناطق (1 إلى 3 أيام)</label>
+   <h3 class="gold">طريقة الدفع</h3><label><input type="radio" name="payment" value="الدفع عند الاستلام" checked> الدفع عند الاستلام</label><br><label><input type="radio" name="payment" value="الدفع الإلكتروني"> الدفع الإلكتروني (تجريبي)</label>
+   <div id="checkoutTotal" class="summary"></div><button class="pink-btn" style="width:100%" type="submit">🔒 تأكيد الطلب الآن</button>
+  </form>
+ </section>
+ <section id="contact" class="view hidden">
+  <div class="page-banner"><h1>تواصل معنا</h1><p>نحن هنا لخدمتكم دائماً</p></div>
+  <div class="contact-grid"><div class="summary"><b>📍 العنوان</b>المملكة العربية السعودية<br>جميع المناطق</div><div class="summary"><b>✉ البريد الإلكتروني</b>mtirars805@gmail.com</div><div class="summary"><b>☏ واتساب</b><span dir="ltr">+966500000000</span><br>للدعم والاستفسار</div></div>
+  <div class="form-card"><h2 class="gold">تابعونا على</h2><p style="text-align:center">تيك توك　𝕏　سناب شات　انستقرام　يوتيوب</p><h2 class="gold">أرسل لنا رسالة</h2><form id="contactForm"><input class="field" placeholder="الاسم الكامل" required><input class="field" placeholder="رقم الجوال"><textarea class="field" placeholder="رسالتك هنا..." required></textarea><button class="gold-btn" style="width:100%">إرسال الرسالة</button></form></div>
+  <div class="promo"><h2>خصوصية تامة وأمان كامل</h2><p>دعم فني على مدار الساعة · توصيل سريع · عروض حصرية</p></div>
+ </section>
+</main>
+<nav class="bottom-nav">
+ <button class="nav-item active" data-page="home" onclick="go('home')"><span class="nav-icon">⌂</span>الرئيسية</button>
+ <button class="nav-item" data-page="orders" onclick="go('orders')"><span class="nav-icon">▤</span>طلباتي</button>
+ <button class="nav-item" data-page="cart" onclick="go('cart')"><span class="nav-icon">🛒</span>السلة</button>
+ <button class="nav-item" data-page="categories" onclick="go('categories')"><span class="nav-icon">▦</span>الأقسام</button>
+ <button class="nav-item" data-page="contact" onclick="go('contact')"><span class="nav-icon">♧</span>تواصل معنا</button>
+</nav>
+<div class="drawer" id="drawer" onclick="closeDrawer(event)"><div class="drawer-panel"><button class="close" onclick="closeDrawer()">×</button><h2 class="gold">بوتيك السعادة</h2><button onclick="go('home');closeDrawer()">⌂　الرئيسية</button><button onclick="go('categories');closeDrawer()">▦　الأقسام</button><button onclick="go('products');closeDrawer()">✧　جميع المنتجات</button><button onclick="go('favorites');closeDrawer()">♡　المفضلة</button><button onclick="go('cart');closeDrawer()">🛒　سلة المشتريات</button><button onclick="go('orders');closeDrawer()">▤　طلباتي</button><button onclick="go('contact');closeDrawer()">☎　تواصل معنا</button></div></div>
+<div class="toast" id="toast"></div><footer>© 2026 بوتيك السعادة — جميع الحقوق محفوظة</footer>
+
 <script>
-function getCart(){return JSON.parse(localStorage.getItem('cart')||'[]')}
-function setCart(c){localStorage.setItem('cart',JSON.stringify(c));updateBadge()}
-function updateBadge(){let c=getCart();let count=c.reduce((a,b)=>a+b.qty,0);document.querySelectorAll('.cart-badge').forEach(e=>{e.textContent=count;e.style.display=count?'flex':'none'})}
-function addToCart(id,name,price){let c=getCart();let f=c.find(i=>i.id==id);if(f)f.qty++;else c.push({id:id,name:name,price:price,qty:1});setCart(c);alert('✅ تمت الإضافة: '+name)}
-function toggleFav(id,name,price){let f=JSON.parse(localStorage.getItem('fav')||'[]');let idx=f.findIndex(i=>i.id==id);if(idx>-1){f.splice(idx,1);alert('❌ حذف من المفضلة')}else{f.push({id:id,name:name,price:price});alert('💖 أضيف للمفضلة: '+name)}localStorage.setItem('fav',JSON.stringify(f))}
-function getFav(){return JSON.parse(localStorage.getItem('fav')||'[]')}
-function go(p){window.location.href=p}
-document.addEventListener('DOMContentLoaded',updateBadge)
+// ---- ربط البيانات مع لوحة التحكم ----
+const ADMIN_KEY = 'alsaada_admin_demo_v1'; // نفس المفتاح الموجود في لوحة التحكم
+let adminData = JSON.parse(localStorage.getItem(ADMIN_KEY)) || null;
+
+// إذا لم تكن هناك بيانات من لوحة التحكم، نضع بيانات افتراضية لكي لا يظهر المتجر فارغاً
+if(!adminData || !adminData.products || adminData.products.length === 0) {
+    adminData = {
+        products: [
+            {id: '1', name: 'منتج تجريبي 1', price: 100, category: 'الأكثر طلباً', image: 'https://via.placeholder.com/300x200/28141c/f7c64f?text=Product+1', desc: 'وصف المنتج التجريبي'},
+            {id: '2', name: 'منتج تجريبي 2', price: 150, category: 'العروض', image: 'https://via.placeholder.com/300x200/28141c/f7c64f?text=Product+2', desc: 'وصف المنتج التجريبي'}
+        ],
+        categories: [{id: '1', name: 'الأكثر طلباً', image: ''}, {id: '2', name: 'العروض', image: ''}],
+        orders: [],
+        settings: {storeName: 'بوتيك السعادة', whatsapp: '+966500000000', email: 'test@test.com'},
+        images: {}
+    };
+    localStorage.setItem(ADMIN_KEY, JSON.stringify(adminData));
+}
+
+// تحديث المتغيرات من بيانات لوحة التحكم
+const products = adminData.products;
+const categories = adminData.categories;
+const adminOrders = adminData.orders;
+
+// جلب السلة والمفضلة والطلبات الخاصة بالمتصفح
+let cart = JSON.parse(localStorage.getItem('store_cart')) || [];
+let favorites = JSON.parse(localStorage.getItem('store_favs')) || [];
+let myOrders = JSON.parse(localStorage.getItem('my_orders')) || [];
+
+// تحديث اسم المتجر في الهيدر
+document.getElementById('storeNameDisplay').innerText = adminData.settings.storeName || 'بوتيك السعادة';
+
+// تحديث صورة البانر إذا كانت موجودة
+if(adminData.images && adminData.images.bannerImage) {
+    document.getElementById('heroImg').src = adminData.images.bannerImage;
+} else {
+    // صورة افتراضية في حال لم يتم رفع بانر
+    document.getElementById('heroImg').src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='400'%3E%3Crect width='1200' height='400' fill='%2328141c'/%3E%3Ctext x='50%25' y='50%25' fill='%23f7c64f' font-size='40' text-anchor='middle'%3Eبوتيك السعادة%3C/text%3E%3C/svg%3E";
+}
+
+// ---- دوال العرض والتحكم ----
+function go(page) {
+    document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+    document.getElementById(page).classList.remove('hidden');
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelector(`.nav-item[data-page="${page}"]`)?.classList.add('active');
+    if(page === 'cart') renderCart();
+    if(page === 'checkout') renderCheckout();
+    if(page === 'orders') renderMyOrders();
+    if(page === 'home') renderHome();
+    if(page === 'products') renderProducts();
+    if(page === 'categories') renderCategories();
+    if(page === 'favorites') renderFavorites();
+    window.scrollTo(0,0);
+}
+
+function addToCart(id) {
+    const prod = products.find(p => p.id === id);
+    if(!prod) return;
+    const existing = cart.find(c => c.id === id);
+    if(existing) existing.qty++;
+    else cart.push({...prod, qty: 1});
+    localStorage.setItem('store_cart', JSON.stringify(cart));
+    updateCartCount();
+    showToast('تمت الإضافة إلى السلة');
+}
+
+function updateCartCount() {
+    document.getElementById('cartCount').innerText = cart.reduce((sum, item) => sum + item.qty, 0);
+}
+
+function renderHome() {
+    // أقسام
+    const homeCats = document.getElementById('homeCats');
+    homeCats.innerHTML = categories.map(c => `<div class="cat" onclick="filterByCategory('${c.name}')"><img src="${c.image || 'https://via.placeholder.com/200x150/10090d/f7c64f?text='+c.name}" alt="${c.name}"><strong>${c.name}</strong></div>`).join('');
+
+    // أحدث المنتجات
+    const homeProds = document.getElementById('homeProducts');
+    homeProds.innerHTML = products.slice(0, 8).map(p => `
+        <div class="product">
+            <img src="${p.image || 'https://via.placeholder.com/300x200/28141c/f7c64f'}" alt="${p.name}">
+            <div class="product-info">
+                <h3>${p.name}</h3>
+                <div class="price">${p.price} ر.س</div>
+                <button class="gold-btn add" onclick="addToCart('${p.id}')">أضف للسلة</button>
+            </div>
+        </div>`).join('');
+}
+
+function renderProducts() {
+    const allProds = document.getElementById('allProducts');
+    allProds.innerHTML = products.map(p => `
+        <div class="product">
+            <img src="${p.image || 'https://via.placeholder.com/300x200/28141c/f7c64f'}" alt="${p.name}">
+            <div class="product-info">
+                <h3>${p.name}</h3>
+                <div class="price">${p.price} ر.س</div>
+                <button class="gold-btn add" onclick="addToCart('${p.id}')">أضف للسلة</button>
+            </div>
+        </div>`).join('');
+}
+
+function renderCategories() {
+    const allCats = document.getElementById('allCats');
+    allCats.innerHTML = categories.map(c => `<div class="cat" onclick="filterByCategory('${c.name}')"><img src="${c.image || 'https://via.placeholder.com/200x150/10090d/f7c64f?text='+c.name}" alt="${c.name}"><strong>${c.name}</strong></div>`).join('');
+}
+
+function filterByCategory(catName) {
+    go('products');
+    const filtered = products.filter(p => p.category === catName);
+    const allProds = document.getElementById('allProducts');
+    allProds.innerHTML = filtered.map(p => `
+        <div class="product">
+            <img src="${p.image || 'https://via.placeholder.com/300x200/28141c/f7c64f'}" alt="${p.name}">
+            <div class="product-info">
+                <h3>${p.name}</h3>
+                <div class="price">${p.price} ر.س</div>
+                <button class="gold-btn add" onclick="addToCart('${p.id}')">أضف للسلة</button>
+            </div>
+        </div>`).join('');
+}
+
+function searchProducts(val) {
+    const filtered = products.filter(p => p.name.includes(val));
+    const allProds = document.getElementById('allProducts');
+    allProds.innerHTML = filtered.map(p => `
+        <div class="product">
+            <img src="${p.image || 'https://via.placeholder.com/300x200/28141c/f7c64f'}" alt="${p.name}">
+            <div class="product-info">
+                <h3>${p.name}</h3>
+                <div class="price">${p.price} ر.س</div>
+                <button class="gold-btn add" onclick="addToCart('${p.id}')">أضف للسلة</button>
+            </div>
+        </div>`).join('');
+}
+
+function renderCart() {
+    const cartDiv = document.getElementById('cartItems');
+    if(cart.length === 0) {
+        cartDiv.innerHTML = '<div class="empty">السلة فارغة</div>';
+        document.getElementById('cartSummary').innerHTML = '';
+        return;
+    }
+    cartDiv.innerHTML = cart.map(item => `
+        <div class="cart-row">
+            <img src="${item.image || 'https://via.placeholder.com/100'}" alt="">
+            <div>
+                <h3>${item.name}</h3>
+                <div class="price">${item.price} ر.س</div>
+                <div class="qty">
+                    <button onclick="changeQty('${item.id}', -1)">-</button>
+                    <span>${item.qty}</span>
+                    <button onclick="changeQty('${item.id}', 1)">+</button>
+                </div>
+            </div>
+            <button class="remove" onclick="removeFromCart('${item.id}')">×</button>
+        </div>
+    `).join('');
+
+    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    document.getElementById('cartSummary').innerHTML = `
+        <div class="summary">
+            <div class="sumline"><span>المجموع الفرعي</span><span>${total} ر.س</span></div>
+            <div class="sumline total"><span>الإجمالي</span><span>${total} ر.س</span></div>
+            <button class="pink-btn" style="width:100%" onclick="go('checkout')">متابعة الشراء</button>
+        </div>
+    `;
+}
+
+function changeQty(id, delta) {
+    const item = cart.find(c => c.id === id);
+    if(item) {
+        item.qty += delta;
+        if(item.qty <= 0) cart = cart.filter(c => c.id !== id);
+        localStorage.setItem('store_cart', JSON.stringify(cart));
+        renderCart();
+        updateCartCount();
+    }
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(c => c.id !== id);
+    localStorage.setItem('store_cart', JSON.stringify(cart));
+    renderCart();
+    updateCartCount();
+}
+
+function renderCheckout() {
+    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    document.getElementById('checkoutTotal').innerHTML = `<div class="sumline total"><span>الإجمالي المطلوب</span><span>${total} ر.س</span></div>`;
+}
+
+document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const phone = formData.get('phone');
+    const city = formData.get('city');
+    const address = formData.get('address');
+    const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+    // 1. حفظ الطلب للعميل (ليتابعه في صفحة طلباتي)
+    const orderId = Date.now().toString();
+    const newOrder = { id: orderId, customer: name, phone: phone, total: total, status: 'جديد', date: new Date().toLocaleString('ar-EG'), items: [...cart] };
+    myOrders.push(newOrder);
+    localStorage.setItem('my_orders', JSON.stringify(myOrders));
+
+    // 2. إرسال الطلب إلى لوحة التحكم (لكي يراه المدير)
+    if(!adminData.orders) adminData.orders = [];
+    adminData.orders.push(newOrder);
+    localStorage.setItem(ADMIN_KEY, JSON.stringify(adminData));
+
+    // 3. تفريغ السلة والانتقال لصفحة الطلبات
+    cart = [];
+    localStorage.setItem('store_cart', JSON.stringify(cart));
+    updateCartCount();
+    alert('تم استلام طلبك بنجاح! سنتواصل معك قريباً.');
+    go('orders');
+});
+
+function renderMyOrders() {
+    const list = document.getElementById('ordersList');
+    if(myOrders.length === 0) {
+        list.innerHTML = '<div class="empty">لا توجد طلبات سابقة.</div>';
+        return;
+    }
+    list.innerHTML = myOrders.reverse().map(o => `
+        <div class="summary" style="margin-bottom:10px">
+            <div class="sumline"><span>رقم الطلب</span><b>#${o.id.slice(-6)}</b></div>
+            <div class="sumline"><span>التاريخ</span><span>${o.date}</span></div>
+            <div class="sumline"><span>الحالة</span><b class="gold">${o.status}</b></div>
+            <div class="sumline"><span>الإجمالي</span><b class="gold">${o.total} ر.س</b></div>
+        </div>
+    `).join('');
+}
+
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.innerText = msg;
+    t.style.display = 'block';
+    setTimeout(() => t.style.display = 'none', 2500);
+}
+
+function toggleSearch() {
+    document.getElementById('homeSearch').classList.toggle('hidden');
+}
+
+function openDrawer() { document.getElementById('drawer').classList.add('open'); }
+function closeDrawer() { document.getElementById('drawer').classList.remove('open'); }
+
+// التشغيل الأولي
+updateCartCount();
+renderHome();
 </script>
-</body></html>
+</body>
+</html>
